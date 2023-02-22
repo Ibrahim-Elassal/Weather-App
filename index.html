@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Api</title>
+    <link rel="stylesheet" href="Css/all.min.css">
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+    <link rel="stylesheet" href="Css/style.css">
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container w-lg-75 mt-3">
+          <a class="navbar-brand d-flex justify-content-between -danger" href="#">
+            <img class="w-100 h-100" src="imgs/logo.png" alt="">
+            <div class="logo-type ms-3 -success">
+                <h1 class="site-title text-white  m-0">Weather</h1>
+                <small class="site-description">tagline goes here</small>
+            </div>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <i class="fa-solid fa-bars icon"></i> 
+          </button>
+          <div class="collapse navbar-collapse rounded-3 mt-lg-0 mt-5" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-lg-0">
+              <li class="nav-item py-3 text-center border-bottom-3">
+                <a class="nav-link active me-lg-2 text-white  border-active " aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item py-3 text-center ">
+                <a class="nav-link active me-lg-2 text-white   " aria-current="page" href="#">News</a>
+              </li>
+              <li class="nav-item py-3 text-center ">
+                <a class="nav-link active me-lg-2 text-white " aria-current="page" href="#">Live cameras</a>
+              </li>
+              <li class="nav-item py-3 text-center ">
+                <a class="nav-link active me-lg-2 text-white  " aria-current="page" href="#">Photos</a>
+              </li>
+              <li class="nav-item py-3 text-center last-item ">
+                <a class="nav-link active  me-lg-5  text-white " aria-current="page" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- hero -->
+    <div class="hero ">
+      <div class="container overflow-auto ">
+        <div class="row g-0">
+          <div class="col-12">
+            <form action="" class="find-location w-100  ">
+              <input  oninput="getWeather(this.value)"  class="w-100" type="text" placeholder="Find Your Location" id="input">
+              <input  type="button" value="Find" id="submit">
+            </form>
+          </div>
+          <!--  -->
+          <div class="forecast-container  my-5 " >
+            <div class="row g-0 " id="forecast">
+  
+              <div class="col-12 col-lg-4">
+                <div class="today forecast">
+                  <div class="forecast-header  d-flex justify-content-between" id="today">
+                    <div class="day">Monday</div>
+                    <div class="date">20February</div>
+                  </div>
+                  <div class="forecast-content ms-4 py-4" id="current">
+                    <div class="location">Cairo</div>
+                    <div class="degree d-flex  ">
+                      <div class="num ">15<sup>o</sup>C </div>
+                      <div class="forecast-icon    d-flex align-items-center">
+                        <img class="w-100 " src="imgs/todayIcon.webp" alt="">
+                      </div>
+                    </div>
+                    <div class="custom mb-4 ">Clear</div>
+                    <span class="me-3">
+                      <img src="imgs/icon-umberella.png" alt="umberella">  20%
+                    </span>
+                    <span class="me-3">
+                      <img src="imgs/icon-wind.png" alt="wind"> 18km/h
+                    </span>
+                    <span>
+                      <img src="imgs/icon-compass.png" alt="compass">  East
+                    </span>
+                  </div>
+                </div>
+              </div> 
+  
+              <div class="col-12 col-lg-4 ">
+                <div class="forecast text-center"  >
+                  <div class= "forecast-header">
+                    <div class="day " id="day2">
+                      Tuesday
+                    </div>
+                  </div>
+                  <div class="forecast-content py-5 mt-4">
+                    <div class="forecast-icon mb-5">
+                      <img src="imgs/113.png" alt="" width="48">
+                    </div>
+                    <div class="degree">
+                      24.5<Sup>o</Sup>C
+                    </div>
+                    <small>
+                      10.4<Sup>o</Sup>
+                    </small>
+                    <div class="custom mt-3">
+                      Sunny
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-12 col-lg-4">
+                <div class="forecast text-center"  >
+                  <div class= "forecast-header">
+                    <div class="day " id="day3">
+                      Wednesday
+                    </div>
+                  </div>
+                  <div class="forecast-content py-5 mt-4">
+                    <div class="forecast-icon mb-5">
+                      <img src="imgs/116.png" alt="" width="48">
+                    </div>
+                    <div class="degree">
+                      24.9<Sup>o</Sup>C
+                    </div>
+                    <small>
+                      11.2<Sup>o</Sup>
+                    </small>
+                    <div class="custom mt-3">
+                      Sunny
+                    </div>
+                  </div>
+                </div>
+              </div> 
+  
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <!-- footer -->
+    <div class="site-footer py-4">
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-8">
+              <form action="" class="subscribe-form w-100 ">
+                <input class="w-100" type="text" placeholder="Enter your email to subscribe...">
+                <input  type="submit" value="Subscribe" >
+              </form>
+          </div>
+          <div class="col-md-3  col-md-offset-1 ">
+            <div class="social-links d-flex ">
+              <div > <a href="" class="d-flex justify-content-center align-items-center"> <i class=" fa-brands fa-facebook-f "></i>  </a> </div>
+              <div > <a href="" class="d-flex justify-content-center align-items-center"> <i class=" fa-brands fa-twitter "></i>  </a> </div>
+              <div > <a href="" class="d-flex justify-content-center align-items-center"> <i class=" fa-brands fa-google-plus "></i>  </a> </div>
+              <div > <a href="" class="d-flex justify-content-center align-items-center"> <i class=" fa-brands fa-pinterest "></i>  </a> </div>
+            </div>
+          </div>
+        </div>
+        <p class="colophon mt-4">
+          Copyright 2014 Company name. Designed by Themezy. All rights reserved
+        </p>
+      </div>
+    </div>
+      <script src="JS/bootstrap.bundle.min.js"></script>
+      <script src="JS/main.js"></script>
+</body>
+</html>
